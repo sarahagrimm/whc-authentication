@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogInComponent implements OnInit {
 
-  constructor() { }
+  creds: any;
+
+  constructor(private router:Router) { }
 
   ngOnInit() {
+    this.creds = {
+      email: null,
+      password: null
+
+    }
+  }
+
+  login(){
+
+    if(this.creds.email && this.creds.password){
+      console.log('can login');
+      this.router.navigateByUrl('/dashboard');      
+    } else {
+      alert('you\'re missing something');
+    }
   }
 
 }

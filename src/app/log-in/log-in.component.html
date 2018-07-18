@@ -4,13 +4,13 @@
       <h2 class="login text-center">Log In!</h2>
   <form action="">
     <div class="form-group">
-      <input type="email" class="form-control" id="email" placeholder="Email Address">
+      <input type="email" class="form-control" id="email" placeholder="Email Address" [(ngModel)]="creds.email" name="something">
     </div>
     <div class="form-group">
-      <input type="password" class="form-control" id="pwd" placeholder="Password">
+      <input type="password" class="form-control" id="pwd" placeholder="Password" [(ngModel)]="creds.password" name="something">
     </div>
-    <button type="submit" class="btn btn-primary btn-group-justified">Log In</button>
-    <label for="href"><a [routerLink]="['/registration']">Don't have an account?</a>
+    <button type="submit" class="btn btn-primary btn-group-justified" (click)="login()">Log In</button>
+    <label><a [routerLink]="['/registration']">Don't have an account?</a>
 </label>
   </form>
   </div></div></div>
